@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirección de IA e Investigación | 3 Subdirecciones | Banco Multiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E85A2C;
+            --ai-blue: #3B82F6;
+            --ai-purple: #8B5CF6;
+            --ai-green: #10B981;
+            --gold: #F59E0B;
+            --research-cyan: #06B6D4;
+            --ai-gradient: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            --agent-gradient: linear-gradient(135deg, #10B981, #3B82F6);
+            --gold-gradient: linear-gradient(135deg, #F59E0B, #EF4444);
+            --purple-gradient: linear-gradient(135deg, #8B5CF6, #EC4899);
+            --research-gradient: linear-gradient(135deg, #06B6D4, #3B82F6);
+            --director-gradient: linear-gradient(135deg, #7C3AED, #2563EB);
+            --white: #FFFFFF;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-900: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--gray-900);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(17, 24, 39, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--director-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .badge-integral {
+            background: var(--director-gradient);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-300);
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--research-cyan);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #164e63 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::before {
+            top: 10%;
+            left: 5%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+        }
+
+        .hero::after {
+            bottom: 10%;
+            right: 5%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.05);
+            }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--director-gradient);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #7C3AED, #FFFFFF, #06B6D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray-300);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--director-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: linear-gradient(180deg, #0f172a 0%, var(--gray-900) 100%);
+            max-width: 100%;
+            padding: 4rem 2rem;
+        }
+
+        .section-gold {
+            background: linear-gradient(135deg, #7c2d12 0%, #1e1b4b 100%);
+            max-width: 100%;
+            padding: 4rem 2rem;
+        }
+
+        .section-purple {
+            background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+            max-width: 100%;
+            padding: 4rem 2rem;
+        }
+
+        .section-cyan {
+            background: linear-gradient(135deg, #164e63 0%, #1e1b4b 100%);
+            max-width: 100%;
+            padding: 4rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-number {
+            display: inline-flex;
+            background: var(--director-gradient);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .section-number.gold {
+            background: var(--gold-gradient);
+        }
+
+        .section-number.purple {
+            background: var(--purple-gradient);
+        }
+
+        .section-number.cyan {
+            background: var(--research-gradient);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--gray-400);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .three-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .area-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .area-card.update {
+            border-color: var(--gold);
+        }
+
+        .area-card.update:hover {
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .area-card.develop {
+            border-color: var(--ai-purple);
+        }
+
+        .area-card.develop:hover {
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .area-card.research {
+            border-color: var(--research-cyan);
+        }
+
+        .area-card.research:hover {
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .area-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .area-icon.gold {
+            background: var(--gold-gradient);
+        }
+
+        .area-icon.purple {
+            background: var(--purple-gradient);
+        }
+
+        .area-icon.cyan {
+            background: var(--research-gradient);
+        }
+
+        .area-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .area-card .subtitle {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .area-card ul {
+            list-style: none;
+        }
+
+        .area-card ul li {
+            padding: 0.4rem 0;
+            color: var(--gray-300);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .area-card ul li::before {
+            content: '✓';
+            color: var(--ai-green);
+            font-weight: bold;
+        }
+
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .org-level {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .org-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.25rem 1.5rem;
+            text-align: center;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .org-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .org-card.director {
+            background: var(--director-gradient);
+            border: none;
+            min-width: 320px;
+        }
+
+        .org-card.subdir-gold {
+            background: var(--gold-gradient);
+            border: none;
+        }
+
+        .org-card.subdir-purple {
+            background: var(--purple-gradient);
+            border: none;
+        }
+
+        .org-card.subdir-cyan {
+            background: var(--research-gradient);
+            border: none;
+        }
+
+        .org-card.reubicado {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.1));
+            border-color: var(--ai-green);
+        }
+
+        .org-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .org-card p {
+            font-size: 0.8rem;
+            color: var(--gray-300);
+        }
+
+        .org-card .salary {
+            margin-top: 0.5rem;
+            font-weight: 700;
+            color: var(--white);
+            font-size: 0.85rem;
+        }
+
+        .org-connector {
+            width: 2px;
+            height: 25px;
+            background: var(--director-gradient);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--ai-green);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--agent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+
+        .reubicacion-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(59, 130, 246, 0.1));
+            border: 2px solid var(--ai-green);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .reubicacion-box h3 {
+            font-size: 1.5rem;
+            color: var(--ai-green);
+            margin-bottom: 1rem;
+        }
+
+        .reubicacion-box p {
+            color: var(--gray-300);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .reubicacion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .reubicacion-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.25rem;
+            border-radius: 12px;
+        }
+
+        .reubicacion-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reubicacion-item h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ai-green);
+        }
+
+        .reubicacion-item p {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        th {
+            background: var(--director-gradient);
+            color: var(--white);
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .cost-value {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .cost-green {
+            color: var(--ai-green);
+            font-weight: 600;
+        }
+
+        .area-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .area-badge.gold {
+            background: var(--gold-gradient);
+        }
+
+        .area-badge.purple {
+            background: var(--purple-gradient);
+        }
+
+        .area-badge.cyan {
+            background: var(--research-gradient);
+        }
+
+        .area-badge.shared {
+            background: var(--agent-gradient);
+        }
+
+        .area-badge.free {
+            background: var(--ai-green);
+        }
+
+        .summary-box {
+            background: var(--ai-green);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+
+        .summary-box h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .summary-box .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-box .subtitle {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        .summary-box .savings {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-item .value {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .summary-item .label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .cta {
+            background: var(--director-gradient);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: var(--white);
+            color: var(--gray-900);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer {
+            background: #0a0a0a;
+            color: var(--gray-400);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .hero-stat-value {
+                font-size: 2rem;
+            }
+
+            .summary-box .amount {
+                font-size: 2rem;
+            }
+
+            .org-level {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .three-areas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="nav-logo-icon">🎯</div>
+                <span>Dirección de IA e Investigación</span>
+                <span class="badge-integral">3 SUBDIRECCIONES</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#vision">Visión</a></li>
+                <li><a href="#area1">Actualización</a></li>
+                <li><a href="#area2">Desarrollo Rápido</a></li>
+                <li><a href="#area3">Desarrollo Digital</a></li>
+                <li><a href="#reubicacion">Reubicación</a></li>
+                <li><a href="#estructura">Estructura</a></li>
+                <li><a href="#inversion">Inversión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 Propuesta Optimizada - 3 Subdirecciones + Personal Reubicado</div>
+            <h1>Dirección de Inteligencia Artificial e Investigación</h1>
+            <p>Modelo eficiente con <strong>3 Subdirecciones</strong> y <strong>15 colaboradores reubicados</strong> del
+                cambio de administración. Aprovechamos infraestructura y recursos existentes del banco para maximizar el
+                valor.</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">3</div>
+                    <div class="hero-stat-label">Subdirecciones</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">80+</div>
+                    <div class="hero-stat-label">Aplicaciones</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">15</div>
+                    <div class="hero-stat-label">Reubicados</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">36</div>
+                    <div class="hero-stat-label">Meses</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$0</div>
+                    <div class="hero-stat-label">Nuevo Personal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Visión 3 Subdirecciones -->
+    <section id="vision" class="section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <h2 class="section-title">Visión de Tres Subdirecciones</h2>
+                <p class="section-subtitle">Modelo optimizado con personal reubicado y recursos existentes del banco</p>
+            </div>
+
+            <div class="three-areas">
+                <div class="area-card update">
+                    <div class="area-icon gold">🔄</div>
+                    <h3>Subdirección de Actualización de Aplicaciones</h3>
+                    <p class="subtitle">Modernización de las 80 aplicaciones existentes</p>
+                    <ul>
+                        <li>Migración de aplicaciones legacy</li>
+                        <li>Arquitectura Active-Active 100% uptime</li>
+                        <li>Observabilidad completa</li>
+                        <li>Cumplimiento regulatorio</li>
+                        <li>5 colaboradores reubicados</li>
+                    </ul>
+                </div>
+
+                <div class="area-card develop">
+                    <div class="area-icon purple">⚡</div>
+                    <h3>Subdirección de Desarrollo Rápido</h3>
+                    <p class="subtitle">Creación de nuevas aplicaciones con IA</p>
+                    <ul>
+                        <li>Análisis por especialistas en IA</li>
+                        <li>Metodología AGILE (PMO del banco)</li>
+                        <li>Infraestructura existente</li>
+                        <li>Generación con Antigravity</li>
+                        <li>5 colaboradores reubicados</li>
+                    </ul>
+                </div>
+
+                <div class="area-card research">
+                    <div class="area-icon cyan">🔬</div>
+                    <h3>Subdirección de Desarrollo Digital</h3>
+                    <p class="subtitle">Normatividad, Estándares y Metodología Multiva</p>
+                    <ul>
+                        <li>Definición de estándares de desarrollo</li>
+                        <li>Normatividad para migración de apps</li>
+                        <li>Metodología Multiva de desarrollo</li>
+                        <li>Vigilancia tecnológica global</li>
+                        <li>Pruebas de concepto (PoC)</li>
+                        <li>5 colaboradores reubicados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Subdirección de Actualización -->
+    <section id="area1" class="section-gold">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number gold">2</div>
+                <h2 class="section-title">Subdirección de Actualización de Aplicaciones</h2>
+                <p class="section-subtitle">80 aplicaciones modernizadas en 36 meses</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gold-gradient);">🔄</div>
+                    <h3>Modernización Completa</h3>
+                    <p>Código reescrito en lenguajes actuales, containerizado y desplegado en Kubernetes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gold-gradient);">📊</div>
+                    <h3>Observabilidad Total</h3>
+                    <p>Grafana + Prometheus + Loki. Métricas, logs y traces en tiempo real.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gold-gradient);">⚡</div>
+                    <h3>Active-Active 100%</h3>
+                    <p>Cero downtime garantizado. Inmune a fallas eléctricas, de red o aplicativas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gold-gradient);">🏛️</div>
+                    <h3>Compliance Total</h3>
+                    <p>CNBV, SHCP, SAT, INDEVAL, BIVA, ISO 27001, PCI-DSS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gold-gradient);">🖥️</div>
+                    <h3>Consola Centralizada</h3>
+                    <p>Control remoto de las 80 aplicaciones desde una sola interfaz.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: var(--gold-gradient);">👥</div>
+                    <h3>5 Colaboradores Reubicados</h3>
+                    <p>Personal de desarrollo capacitado en IA del cambio de administración.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Subdirección de Desarrollo Rápido -->
+    <section id="area2" class="section-purple">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number purple">3</div>
+                <h2 class="section-title">Subdirección de Desarrollo Rápido</h2>
+                <p class="section-subtitle">Nuevas aplicaciones con metodología AGILE y generación IA</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" style="border-color: var(--ai-purple);">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">🔍</div>
+                    <h3>Análisis Especializado</h3>
+                    <p>Cada proyecto es evaluado para determinar viabilidad y enfoque óptimo.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-purple);">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">🏃</div>
+                    <h3>Metodología AGILE</h3>
+                    <p>Coordinación con la PMO del banco para sprints y entregas incrementales.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-purple);">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">🏗️</div>
+                    <h3>Infraestructura Existente</h3>
+                    <p>Las nuevas apps funcionan con lo que ya tiene el banco.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-purple);">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">⚡</div>
+                    <h3>Generación con Antigravity</h3>
+                    <p>Prompts expertos generan código de alta calidad. Velocidad 10x.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-purple);">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">📐</div>
+                    <h3>Estándares Unificados</h3>
+                    <p>Código, seguridad, documentación y despliegue estandarizados.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-purple);">
+                    <div class="feature-icon" style="background: var(--purple-gradient);">👥</div>
+                    <h3>5 Colaboradores Reubicados</h3>
+                    <p>Personal de infraestructura capacitado en IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Subdirección de Desarrollo Digital -->
+    <section id="area3" class="section-cyan">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number cyan">4</div>
+                <h2 class="section-title">Subdirección de Desarrollo Digital</h2>
+                <p class="section-subtitle">Normatividad, Estándares, Metodología Multiva y Vigilancia Tecnológica</p>
+            </div>
+
+            <!-- Función Principal: Normatividad -->
+            <div
+                style="background: rgba(6, 182, 212, 0.1); border: 2px solid var(--research-cyan); border-radius: 20px; padding: 2.5rem; text-align: center; margin-bottom: 2.5rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--research-cyan);">📐 Normatividad y
+                    Estándares Institucionales</h3>
+                <p style="color: var(--gray-300); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    Define los <strong style="color: white;">estándares con los cuales se migrarán las aplicaciones
+                        existentes</strong> y se <strong style="color: var(--research-cyan);">desarrollarán las nuevas
+                        aplicaciones</strong>, asegurando consistencia, calidad y cumplimiento en toda la institución.
+                </p>
+            </div>
+
+            <!-- Metodología Multiva -->
+            <div
+                style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.1)); border: 2px solid var(--ai-blue); border-radius: 20px; padding: 2.5rem; text-align: center; margin-bottom: 2.5rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--ai-blue);">🏦 Metodología Multiva</h3>
+                <p style="color: var(--gray-300); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                    Definición de la <strong style="color: white;">Metodología Multiva para el Desarrollo
+                        Tecnológico</strong> de la empresa. Un marco propio que integra las mejores prácticas de la
+                    industria adaptadas a la realidad del banco.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <span
+                        style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem;">📋
+                        Ciclo de Vida</span>
+                    <span
+                        style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem;">🔄
+                        Procesos</span>
+                    <span
+                        style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem;">📊
+                        Métricas</span>
+                    <span
+                        style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem;">✅
+                        Entregables</span>
+                    <span
+                        style="background: rgba(0,0,0,0.3); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem;">🔒
+                        Seguridad</span>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">📐</div>
+                    <h3>Estándares de Migración</h3>
+                    <p>Define las normas y lineamientos para la migración de las 80 aplicaciones existentes. Garantiza
+                        consistencia.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">🆕</div>
+                    <h3>Estándares de Desarrollo</h3>
+                    <p>Normas para la creación de nuevas aplicaciones: arquitectura, código, seguridad, documentación y
+                        despliegue.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">🏦</div>
+                    <h3>Metodología Multiva</h3>
+                    <p>Marco metodológico propio del banco para el desarrollo tecnológico, adaptado a su cultura y
+                        regulaciones.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">🔭</div>
+                    <h3>Vigilancia Tecnológica</h3>
+                    <p>Monitoreo continuo de tendencias, conferencias y lanzamientos de la industria tech global.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">🧪</div>
+                    <h3>Pruebas de Concepto (PoC)</h3>
+                    <p>Evaluación práctica de nuevas tecnologías en ambiente controlado antes de adopción institucional.
+                    </p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">📊</div>
+                    <h3>Benchmarking</h3>
+                    <p>Comparativa con bancos líderes globales y mejores prácticas del sector financiero.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">🚀</div>
+                    <h3>Aplicación Inmediata</h3>
+                    <p>Transferencia rápida de estándares y conocimiento a las otras Subdirecciones.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--research-cyan);">
+                    <div class="feature-icon" style="background: var(--research-gradient);">👥</div>
+                    <h3>5 Colaboradores Reubicados</h3>
+                    <p>Personal de producción capacitado en normatividad, estándares e investigación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Reubicación de Personal -->
+    <section id="reubicacion" class="section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <h2 class="section-title">Programa de Reubicación de Personal</h2>
+                <p class="section-subtitle">15 colaboradores reubicados del cambio de administración</p>
+            </div>
+
+            <div class="reubicacion-box">
+                <h3>👥 Aprovechamiento del Talento Existente</h3>
+                <p>El personal que debe salir de sus áreas por el cambio de administración será reubicado y capacitado
+                    en las 3 Subdirecciones. <strong>Se utiliza el presupuesto existente de esas áreas</strong>,
+                    eliminando la necesidad de contratar nuevo personal.</p>
+
+                <div class="reubicacion-grid">
+                    <div class="reubicacion-item">
+                        <div class="icon">💻</div>
+                        <h4>Personal de Desarrollo</h4>
+                        <p>5 colaboradores → Subdirección de Actualización</p>
+                    </div>
+                    <div class="reubicacion-item">
+                        <div class="icon">🖥️</div>
+                        <h4>Personal de Infraestructura</h4>
+                        <p>5 colaboradores → Subdirección de Desarrollo Rápido</p>
+                    </div>
+                    <div class="reubicacion-item">
+                        <div class="icon">⚙️</div>
+                        <h4>Personal de Producción</h4>
+                        <p>5 colaboradores → Subdirección de Desarrollo Digital</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" style="border-color: var(--ai-green);">
+                    <div class="feature-icon">💰</div>
+                    <h3>Costo Cero de Contratación</h3>
+                    <p>No se requiere presupuesto adicional para personal. Se utiliza el presupuesto existente de las
+                        áreas de origen.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-green);">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Capacitación por el Director</h3>
+                    <p>El Director de IA capacitará inicialmente a los 15 colaboradores en desarrollo y administración
+                        de proyectos IA.</p>
+                </div>
+                <div class="feature-card" style="border-color: var(--ai-green);">
+                    <div class="feature-icon">🏦</div>
+                    <h3>Conocimiento Institucional</h3>
+                    <p>El personal reubicado ya conoce los procesos, sistemas y cultura del banco. Valor invaluable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Estructura Organizacional -->
+    <section id="estructura" class="section">
+        <div class="section-header">
+            <div class="section-number">6</div>
+            <h2 class="section-title">Estructura Organizacional Optimizada</h2>
+            <p class="section-subtitle">Director + 3 Subdirectores + 15 Reubicados + Recursos del Banco</p>
+        </div>
+
+        <div class="org-chart">
+            <!-- Director -->
+            <div class="org-level">
+                <div class="org-card director">
+                    <h3>🎯 Director de Inteligencia Artificial e Investigación</h3>
+                    <p>Estrategia, Gobierno, Innovación y Capacitación Inicial</p>
+                    <div class="salary">$180,000 MXN/mes</div>
+                </div>
+            </div>
+
+            <div class="org-connector"></div>
+
+            <!-- Tres Subdirecciones -->
+            <div class="org-level" style="gap: 2rem;">
+                <div style="text-align: center;">
+                    <div class="org-card subdir-gold">
+                        <h3>🔄 Subdirector de Actualización de Aplicaciones</h3>
+                        <p>Modernización de las 80 apps</p>
+                        <div class="salary">$95,000 MXN/mes</div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <div class="org-card reubicado">
+                            <h3>👥 5 Colaboradores Reubicados</h3>
+                            <p>Personal de Desarrollo</p>
+                            <div class="salary" style="color: var(--ai-green);">Presupuesto Existente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <div class="org-card subdir-purple">
+                        <h3>⚡ Subdirector de Desarrollo Rápido</h3>
+                        <p>Nuevas aplicaciones con IA</p>
+                        <div class="salary">$95,000 MXN/mes</div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <div class="org-card reubicado">
+                            <h3>👥 5 Colaboradores Reubicados</h3>
+                            <p>Personal de Infraestructura</p>
+                            <div class="salary" style="color: var(--ai-green);">Presupuesto Existente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <div class="org-card subdir-cyan">
+                        <h3>🔬 Subdirector de Desarrollo Digital</h3>
+                        <p>Vigilancia tecnológica global</p>
+                        <div class="salary">$95,000 MXN/mes</div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <div class="org-card reubicado">
+                            <h3>👥 5 Colaboradores Reubicados</h3>
+                            <p>Personal de Producción</p>
+                            <div class="salary" style="color: var(--ai-green);">Presupuesto Existente</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="org-connector"></div>
+
+            <!-- Recursos del Banco -->
+            <div class="org-level">
+                <div class="org-card"
+                    style="min-width: 100%; background: rgba(255,255,255,0.05); border-color: var(--gray-400);">
+                    <h3>🏦 Recursos Existentes del Banco (Sin Costo Adicional)</h3>
+                    <p>PMO (Metodología AGILE) • Gerencia de Infraestructura • Gerencia de QA y Pruebas •
+                        Infraestructura Cloud • ITSM</p>
+                </div>
+            </div>
+
+            <div class="org-connector"></div>
+
+            <!-- Agentes -->
+            <div class="org-level">
+                <div class="org-card" style="min-width: 100%; background: var(--agent-gradient); border: none;">
+                    <h3>🤖 15 Agentes de IA Autónomos</h3>
+                    <p>Desarrolladores, QA, DevOps, Seguridad, Documentación, UI/UX, Scrum Master, Monitoreo,
+                        Compliance, Auditoría</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Inversión -->
+    <section id="inversion" class="section-dark">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-number">7</div>
+                <h2 class="section-title">Inversión Total Optimizada (36 Meses)</h2>
+                <p class="section-subtitle">Modelo lean con máximo aprovechamiento de recursos existentes</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Área</th>
+                            <th>Detalle</th>
+                            <th style="text-align: right;">Monto (36 meses)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Director de IA e Investigación</strong></td>
+                            <td><span class="area-badge shared">Dirección</span></td>
+                            <td>$180,000/mes × 36 meses</td>
+                            <td style="text-align: right;" class="cost-value">$6,480,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subdirector de Actualización de Aplicaciones</strong></td>
+                            <td><span class="area-badge gold">Subdirección 1</span></td>
+                            <td>$95,000/mes × 36 meses</td>
+                            <td style="text-align: right;" class="cost-value">$3,420,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subdirector de Desarrollo Rápido</strong></td>
+                            <td><span class="area-badge purple">Subdirección 2</span></td>
+                            <td>$95,000/mes × 36 meses</td>
+                            <td style="text-align: right;" class="cost-value">$3,420,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subdirector de Desarrollo Digital</strong></td>
+                            <td><span class="area-badge cyan">Subdirección 3</span></td>
+                            <td>$95,000/mes × 36 meses</td>
+                            <td style="text-align: right;" class="cost-value">$3,420,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15 Colaboradores Reubicados</strong></td>
+                            <td><span class="area-badge free">Reubicación</span></td>
+                            <td>Presupuesto existente de áreas de origen</td>
+                            <td style="text-align: right;" class="cost-green">$0 (existente)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Licencias IA (Claude, Copilot, GPT)</strong></td>
+                            <td><span class="area-badge shared">Todas</span></td>
+                            <td>$180,000/mes × 36 meses</td>
+                            <td style="text-align: right;" class="cost-value">$6,480,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equipamiento (19 estaciones)</strong></td>
+                            <td><span class="area-badge shared">Todas</span></td>
+                            <td>Laptops premium, monitores (4 nuevos + 15 reubicados)</td>
+                            <td style="text-align: right;" class="cost-value">$600,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Auditorías y Compliance</strong></td>
+                            <td><span class="area-badge shared">Todas</span></td>
+                            <td>ISO, PCI-DSS anuales</td>
+                            <td style="text-align: right;" class="cost-value">$1,440,000</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td><strong>Infraestructura Cloud</strong></td>
+                            <td><span class="area-badge free">Ya existe</span></td>
+                            <td>Infraestructura actual del banco</td>
+                            <td style="text-align: right;" class="cost-green">$0 (existente)</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td><strong>Gerencia de Infraestructura</strong></td>
+                            <td><span class="area-badge free">Ya existe</span></td>
+                            <td>Gerencia actual del banco</td>
+                            <td style="text-align: right;" class="cost-green">$0 (existente)</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td><strong>Gerencia de QA y Pruebas</strong></td>
+                            <td><span class="area-badge free">Ya existe</span></td>
+                            <td>Gerencia actual del banco</td>
+                            <td style="text-align: right;" class="cost-green">$0 (existente)</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td><strong>PMO (Metodología AGILE)</strong></td>
+                            <td><span class="area-badge free">Ya existe</span></td>
+                            <td>PMO actual del banco</td>
+                            <td style="text-align: right;" class="cost-green">$0 (existente)</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td><strong>Licencias ITSM</strong></td>
+                            <td><span class="area-badge free">Ya existe</span></td>
+                            <td>JIRA/ServiceNow del banco</td>
+                            <td style="text-align: right;" class="cost-green">$0 (existente)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="summary-box">
+                <h3>Inversión Total del Proyecto (36 Meses)</h3>
+                <div class="amount">$25,260,000 MXN</div>
+                <div class="subtitle">≈ $1,263,000 USD | Enero 2025 - Diciembre 2027</div>
+                <div class="savings">💰 AHORRO de $38,640,000 vs propuesta anterior</div>
+
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="value">3</div>
+                        <div class="label">Subdirecciones</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">80+</div>
+                        <div class="label">Apps</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">$702K</div>
+                        <div class="label">Mensual</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">4</div>
+                        <div class="label">Nuevos</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">15</div>
+                        <div class="label">Reubicados</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">15</div>
+                        <div class="label">Agentes IA</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="value">-60%</div>
+                        <div class="label">Ahorro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Beneficios -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">8</div>
+            <h2 class="section-title">Beneficios del Modelo Optimizado</h2>
+            <p class="section-subtitle">Máximo valor con inversión mínima</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--gold-gradient);">🔄</div>
+                <h3>80 Apps Actualizadas</h3>
+                <p>Subdirección 1 moderniza todas las aplicaciones legacy con arquitectura de punta.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--purple-gradient);">⚡</div>
+                <h3>Desarrollo Ilimitado</h3>
+                <p>Subdirección 2 crea nuevas aplicaciones a demanda con desarrollo rápido.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: var(--research-gradient);">🔬</div>
+                <h3>Tecnología al Día</h3>
+                <p>Subdirección 3 garantiza que el banco siempre use la mejor tecnología global.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>64% de Ahorro</h3>
+                <p>De $63.9M a $23.1M aprovechando recursos existentes del banco.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>15 Empleos Preservados</h3>
+                <p>Personal del cambio de administración reubicado y capacitado en IA.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏦</div>
+                <h3>Sinergia con el Banco</h3>
+                <p>PMO, Infraestructura, QA y ITSM existentes integrados sin costo adicional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Dirección de IA e Investigación - Modelo Optimizado</h2>
+        <p>3 Subdirecciones, 4 nuevos puestos, 15 colaboradores reubicados, 15 agentes de IA y recursos existentes del
+            banco.</p>
+        <a href="#" class="btn">Presentar al Comité Directivo</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>DOCUMENTO INTERNO - CONFIDENCIAL</strong></p>
+        <p>Dirección de Inteligencia Artificial e Investigación | Propuesta Optimizada 3 Subdirecciones | Enero 2025</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+
+</html>
